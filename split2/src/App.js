@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+
+import Home from "./Components/Home";
+import CreatePost from "./Components/CreatePost";
+import Login from "./Components/Login";
+import Logout from "./Components/Logout";
+import Navbar from "./Components/Navbar";
+import { useState } from "react";
 
 function App() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>github　Actions1</h1>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar isAuth={isAuth} />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/createpost" element={<CreatePost />}></Route>
+          <Route
+            path="/login"
+            element={<Login setIsAuth={setIsAuth} />}
+          ></Route>
+          <Route
+            path="/logout"
+            element={<Logout setIsAuth={setIsAuth} />}
+          ></Route>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
