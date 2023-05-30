@@ -4,14 +4,14 @@ import {auth, provider} from "../firebase";
 import {useNavigate} from "react-router-dom";
 
 const Login = ({setIsAuth}) => {
-  // const navigate =useNavigate();
+  const navigate =useNavigate();
   const loginInWithGoogle = () =>{
     
     //googleでログイン
     signInWithPopup(auth,provider).then((result) =>{
       localStorage.setItem("isAuth",true);
       setIsAuth(true);
-      // navigate("/split_bill/");
+      navigate("/");
     })
   }
   return (
