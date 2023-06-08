@@ -28,7 +28,7 @@ const Home = () => {
               <h1>{post.title}</h1>
             </div>
 
-            <div className="postTextContainer">{post.postsText}</div>
+            <div className="postTextContainer">{post.postsText}円</div>
             <div className="nameAndDeleteButton">
               <h3>{post.username}</h3>
               {post.username === auth.currentUser&& (
