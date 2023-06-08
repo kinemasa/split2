@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 const CreatePost = (isAuth) => {
 
   const navigate = useNavigate();
-
+  const user = auth.currentUser
   const [title,setTitle] = useState();
   const [postText,setPostText]  =useState();
 
@@ -17,7 +17,7 @@ const CreatePost = (isAuth) => {
     await addDoc(collection(db,"posts"),{
       title:title,
       postsText:postText,
-      username:auth.currentUser.displayName
+      username:user.displayName
     });
     navigate("/")
   }
@@ -39,7 +39,7 @@ if(!isAuth){
         <div className='p-4 text-2xl'>円</div>
         </div>
           
-          <button className='w-40 h-20  m-2 shadow-lg bg-blue-400 rounded-lg hover:bg-blue-500'onClick={createPost}>投稿</button>
+          <button className='w-40 h-20 p-4 m-4 shadow-lg bg-blue-400 rounded-lg hover:bg-blue-500'onClick={createPost}>投稿</button>
         </div>
         
       </div>

@@ -31,7 +31,7 @@ const Home = () => {
             <div className="postTextContainer">{post.postsText}</div>
             <div className="nameAndDeleteButton">
               <h3>{post.username}</h3>
-              {post.username === auth.currentUser.displayName && (
+              {post.username === auth.currentUser&& (
                 <button onClick={() => handleDelete(post.id)}>削除</button>
               )}
             </div>
