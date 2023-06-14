@@ -2,10 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { getDocs, collection, doc, deleteDoc } from "firebase/firestore";
 import { db, auth } from "../firebase";
+import {useNavigate} from "react-router-dom";
 
 
+const Home = (isAuth) => {
 
-const Home = () => {
   const [postList, setPostList] = useState([]);
   useEffect(() => {
     const getPosts = async () => {
@@ -20,10 +21,11 @@ const Home = () => {
     window.location.href = "/";
   };
   return (
-    <div className="homePage">
+    <div className="homePage ">
+      <div className="w-full flex flex-col items-center">
       {postList.map((post) => {
         return (
-          <div className="postContents" key={post.id}>
+          <div className="postContents shadow-xl w-96 m-2" key={post.id}>
             <div className="postHeader">
               <h1>{post.title}</h1>
             </div>
@@ -39,6 +41,9 @@ const Home = () => {
         );
       })}
     </div>
+
+      </div>
+     
   );
 };
 

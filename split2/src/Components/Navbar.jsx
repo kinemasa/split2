@@ -29,6 +29,12 @@ const Navbar = ({ isAuth }) => {
                 記事投稿
               </Link>
             </button>
+            <button className="block  text-2xl  text-white  hover:text-orange-500 ">
+              <Link to="/profile" className="">
+                {/* <FontAwesomeIcon icon={faHome} /> */}
+                マイページ
+              </Link>
+            </button>
             <button className="block  text-2xl  text-white  hover:text-orange-500">
               <Link to="/logout" className="">
                 {/* <FontAwesomeIcon icon={faHome} /> */}
