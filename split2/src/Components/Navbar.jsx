@@ -7,7 +7,7 @@ const Navbar = ({ isAuth }) => {
   return (
     <nav>
       <div className="w-screen bg-orange-300 h-20 flex justify-center gap-5 items-center">
-        <button className="block  text-2xl  text-white  hover:text-orange-500 ">
+        <button className="block  text-md md:text-sm  text-white  hover:text-orange-500 ">
           <Link to="/">
             {/* <FontAwesomeIcon icon={faHome} /> */}
             ホーム
@@ -15,7 +15,7 @@ const Navbar = ({ isAuth }) => {
         </button>
 
         {!isAuth ? (
-          <button className="block  text-2xl  text-white  hover:text-orange-500 ">
+          <button className="block  text-md  text-white  hover:text-orange-500 ">
             <Link to="/login" className="">
               {/* <FontAwesomeIcon icon={faHome} /> */}
               ログイン
@@ -23,19 +23,19 @@ const Navbar = ({ isAuth }) => {
           </button>
         ) : (
           <>
-            <button className="block  text-2xl  text-white  hover:text-orange-500 ">
+            <button className="block  text-md  text-white  hover:text-orange-500 ">
               <Link to="/createPost" className="">
                 {/* <FontAwesomeIcon icon={faHome} /> */}
                 記事投稿
               </Link>
             </button>
-            <button className="block  text-2xl  text-white  hover:text-orange-500 ">
+            <button className="block  text-md  text-white  hover:text-orange-500 ">
               <Link to="/profile" className="">
                 {/* <FontAwesomeIcon icon={faHome} /> */}
                 マイページ
               </Link>
             </button>
-            <button className="block  text-2xl  text-white  hover:text-orange-500">
+            <button className="block  text-md  text-white  hover:text-orange-500">
               <Link to="/logout" className="">
                 {/* <FontAwesomeIcon icon={faHome} /> */}
                 ログアウト
